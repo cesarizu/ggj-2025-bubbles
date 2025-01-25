@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjmsit54p1bqu"]
+
+[ext_resource type="Script" path="res://game/spike/spike.gd" id="1_uhhbb"]
+[ext_resource type="Texture2D" uid="uid://0lej3ce13s88" path="res://game/spike/sprites/1.png" id="2_pcc2u"]
+[ext_resource type="Texture2D" uid="uid://60jv0wogtvyr" path="res://game/spike/sprites/2.png" id="3_ywidy"]
+[ext_resource type="Texture2D" uid="uid://c11whh6stry23" path="res://game/spike/sprites/3.png" id="4_2rsas"]
+[ext_resource type="Texture2D" uid="uid://cfs60gewukkx0" path="res://game/spike/sprites/4.png" id="5_6kl4a"]
+[ext_resource type="Texture2D" uid="uid://ruyyuo64qjrx" path="res://game/spike/sprites/5.png" id="6_ih3rp"]
+
+[node name="Spike" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_uhhbb")
+sprites = Array[Texture2D]([ExtResource("2_pcc2u"), ExtResource("3_ywidy"), ExtResource("4_2rsas"), ExtResource("5_6kl4a"), ExtResource("6_ih3rp")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("6_ih3rp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="c_0" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, 22)
+polygon = PackedVector2Array(-264, 206, -147, 39, -36, 128, 111, -123, 258, 198)
+disabled = true
+
+[node name="c_1" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, 22)
+polygon = PackedVector2Array(-264, 206, -143, 28, 86, 67, 213, 9, 258, 198)
+disabled = true
+
+[node name="c_2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, 22)
+polygon = PackedVector2Array(-264, 206, -238, -50, -201, 149, -14, 64, 193, 151, 258, 198)
+disabled = true
+
+[node name="c_3" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, 22)
+polygon = PackedVector2Array(-264, 206, -139, 87, -83, 147, 146, 99, 217, 144, 258, 198)
+disabled = true
+
+[node name="c_4" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4, 22)
+polygon = PackedVector2Array(-264, 206, -90, 130, -5, -63, 52, 156, 258, 198)
+disabled = true
