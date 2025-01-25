@@ -7,8 +7,7 @@ var bubble: Bubble
 
 func _process(delta: float) -> void:
 	if bubble and cpu_particles_2d.emitting:
-		print(bubble.position.y)
-		bubble.blow_up(5.0 * delta)
+		bubble.blow_up(5.0 * bubble.position.y / get_viewport_rect().size.y * delta)
 
 
 func _on_click_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
