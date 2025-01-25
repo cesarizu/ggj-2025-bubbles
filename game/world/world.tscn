@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://1n83a2y6osp5"]
+[gd_scene load_steps=4 format=3 uid="uid://1n83a2y6osp5"]
 
 [ext_resource type="Script" path="res://game/world/world.gd" id="1_gbawv"]
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="2_b8c1x"]
+[ext_resource type="Texture2D" uid="uid://cv4p8ap6xq8b4" path="res://game/world/background.jpg" id="3_vtkvb"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gbawv")
 
+[node name="background" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("3_vtkvb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
 [node name="Bubble" parent="." instance=ExtResource("2_b8c1x")]
+position = Vector2(440, 548)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
