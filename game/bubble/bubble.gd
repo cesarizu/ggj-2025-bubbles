@@ -1,6 +1,9 @@
 class_name Bubble
 extends RigidBody2D
 
+@export var grow_factor := 1.05
+@export var shrink_factor := 1.0 / 1.05
+
 @onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var circle_shape_2d: CircleShape2D = %CollisionShape2D.shape
 
@@ -23,13 +26,13 @@ func _ready() -> void:
 
 func blow_up() -> void:
 	apply_central_impulse(Vector2.UP * 50 * mass)
-	scale_bubble(1.1)
+	scale_bubble(grow_factor)
 	wobble()
 
 
 func drip_down() -> void:
 	apply_central_impulse(Vector2.DOWN * 25 * mass)
-	scale_bubble(1.0 / 1.1)
+	scale_bubble(shrink_factor)
 	wobble()
 
 
