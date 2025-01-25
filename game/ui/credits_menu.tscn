@@ -1,0 +1,137 @@
+[gd_scene load_steps=2 format=3 uid="uid://djud1kiy6cflf"]
+
+[ext_resource type="Script" path="res://game/ui/credits_menu.gd" id="1_sn0xu"]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sn0xu")
+
+[node name="Credits" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_top = 69.0
+offset_right = 153.5
+offset_bottom = 250.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[b]Credits[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Tony" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.505
+offset_left = 163.0
+offset_top = 408.0
+offset_right = 795.4
+offset_bottom = 485.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[i]User Interface - Anthony Carmen[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Cesar" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.5
+offset_top = 274.0
+offset_right = 353.5
+offset_bottom = 350.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[i]Production Manager - Cesar Izurieta[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Josué" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 408.0
+offset_right = 773.0
+offset_bottom = 484.0
+bbcode_enabled = true
+text = "[i]Game Play - Josue Ortiz[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Lilia" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1123.0
+offset_top = 678.0
+offset_right = 1505.0
+offset_bottom = 754.0
+bbcode_enabled = true
+text = "[i]Art - Lilia Escudero[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Luis" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1123.0
+offset_top = 543.0
+offset_right = 1530.0
+offset_bottom = 619.0
+bbcode_enabled = true
+text = "[i]Music - Luis Costales[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Jack" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 543.0
+offset_right = 853.0
+offset_bottom = 619.0
+bbcode_enabled = true
+text = "[i]Virtual FX - Anthony Jimenez[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Jose" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 678.0
+offset_right = 794.0
+offset_bottom = 754.0
+bbcode_enabled = true
+text = "[i]Shaders - Jose [/i] "
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ReturnMain" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -192.0
+offset_right = 225.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="ReturnMain" to="." method="_on_return_main_pressed"]
