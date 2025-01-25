@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjpm2y7qgut54"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpm2y7qgut54"]
 
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="1_77kjh"]
 [ext_resource type="Script" path="res://game/bubble/bubble_test.gd" id="1_wssxx"]
 [ext_resource type="Texture2D" uid="uid://ddf80tyto4oqt" path="res://icon.svg" id="2_rgeyu"]
+[ext_resource type="PackedScene" uid="uid://cq0oagmscyjau" path="res://game/tubo/tubo.tscn" id="4_6k4el"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4w31c"]
 
@@ -31,3 +32,6 @@ position = Vector2(857, 160)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 position = Vector2(-4, -1)
 shape = SubResource("WorldBoundaryShape2D_3ifq7")
+
+[node name="Tube" parent="." instance=ExtResource("4_6k4el")]
+position = Vector2(636, 982)
