@@ -20,10 +20,10 @@ script = ExtResource("2_56dob")
 unique_name_in_owner = true
 show_behind_parent = true
 position = Vector2(0, -107.63)
-scale = Vector2(1, 1)
 emitting = false
 amount = 54
 lifetime = 1.5
+local_coords = true
 texture = ExtResource("2_fia6x")
 direction = Vector2(0, -1)
 spread = 12.0
@@ -43,7 +43,6 @@ shape = SubResource("RectangleShape2D_0hswy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea2D"]
 position = Vector2(0, -793.662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8ujid")
 
 [connection signal="input_event" from="ClickArea2D" to="." method="_on_click_area_2d_input_event"]

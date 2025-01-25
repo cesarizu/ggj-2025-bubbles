@@ -1,7 +1,7 @@
 class_name Bubble
 extends RigidBody2D
 
-@export var grow_factor := 0.05
+@export var grow_factor := 0.5
 @export var shrink_factor := -0.05
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
