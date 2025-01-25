@@ -1,24 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq0oagmscyjau"]
+[gd_scene load_steps=5 format=3 uid="uid://cq0oagmscyjau"]
 
 [ext_resource type="Texture2D" uid="uid://icj2weqymvij" path="res://game/tubo/tubo.png" id="1_krffv"]
+[ext_resource type="Script" path="res://game/tubo/pipe_click.gd" id="2_aye1t"]
 [ext_resource type="Texture2D" uid="uid://bckhd8pmwtotb" path="res://game/bubble/bubble.svg" id="2_fia6x"]
 
-[node name="Tubo" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hswy"]
+size = Vector2(189.082, 211.948)
 
-[node name="tubo" type="Sprite2D" parent="."]
-position = Vector2(860, 678)
+[node name="tuberia" type="Sprite2D"]
+position = Vector2(639, 702.25)
+scale = Vector2(0.682243, 0.754902)
 texture = ExtResource("1_krffv")
 
-[node name="burbujas" type="CPUParticles2D" parent="tubo"]
-light_mask = 0
-position = Vector2(-1, -108)
-amount = 52
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_aye1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.73291, 19.5389)
+shape = SubResource("RectangleShape2D_0hswy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Area2D"]
+position = Vector2(0, -107.63)
+emitting = false
+amount = 54
 lifetime = 1.5
 texture = ExtResource("2_fia6x")
 direction = Vector2(0, -1)
-spread = 27.0
+spread = 12.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 120.0
-initial_velocity_max = 200.0
-scale_amount_min = 0.05
+initial_velocity_max = 500.0
+scale_amount_min = 0.01
 scale_amount_max = 0.05
