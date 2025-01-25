@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq0oagmscyjau"]
+
+[ext_resource type="Texture2D" uid="uid://icj2weqymvij" path="res://game/tubo/tubo.png" id="1_krffv"]
+[ext_resource type="Texture2D" uid="uid://bckhd8pmwtotb" path="res://game/bubble/bubble.svg" id="2_fia6x"]
+
+[node name="Tubo" type="Node2D"]
+
+[node name="tubo" type="Sprite2D" parent="."]
+position = Vector2(860, 678)
+texture = ExtResource("1_krffv")
+
+[node name="burbujas" type="CPUParticles2D" parent="tubo"]
+light_mask = 0
+position = Vector2(-1, -108)
+amount = 52
+lifetime = 1.5
+texture = ExtResource("2_fia6x")
+direction = Vector2(0, -1)
+spread = 27.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.05
+scale_amount_max = 0.05
