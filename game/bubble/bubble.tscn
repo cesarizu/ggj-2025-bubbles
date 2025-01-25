@@ -1,12 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://cim3dluv6hox2"]
+[gd_scene load_steps=14 format=3 uid="uid://cim3dluv6hox2"]
 
 [ext_resource type="Script" path="res://game/bubble/bubble.gd" id="1_viwex"]
 [ext_resource type="Texture2D" uid="uid://bckhd8pmwtotb" path="res://game/bubble/bubble.svg" id="2_6q6au"]
+[ext_resource type="Shader" path="res://game/bubble/bubble.gdshader" id="2_i2o1x"]
 [ext_resource type="Texture2D" uid="uid://kgcqmqgd68g3" path="res://game/bubble/pop_particle.svg" id="3_0udgq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dea1h"]
 friction = 0.0
 bounce = 1.0
+
+[sub_resource type="Gradient" id="Gradient_vfjg2"]
+offsets = PackedFloat32Array(0, 0.321799, 0.522491, 0.740484, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.405723, 1.68458e-07, 0.183317, 1, 1.20327e-07, 0.486048, 0.344275, 1, 1, 0.352108, 0.622032, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gwoit"]
+noise_type = 2
+frequency = 0.0017
+cellular_return_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_acbcy"]
+seamless = true
+color_ramp = SubResource("Gradient_vfjg2")
+noise = SubResource("FastNoiseLite_gwoit")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhwbl"]
+shader = ExtResource("2_i2o1x")
+shader_parameter/noise = SubResource("NoiseTexture2D_acbcy")
 
 [sub_resource type="Curve" id="Curve_yegg8"]
 _data = [Vector2(0, 1), 0.0, -3.18999, 0, 0, Vector2(1, 0), 0.0119504, 0.0, 0, 0]
@@ -47,6 +66,8 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 6
+material = SubResource("ShaderMaterial_mhwbl")
+position = Vector2(19, 4)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6q6au")
 
@@ -65,6 +86,7 @@ trail_lifetime = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
+visible = false
 shape = SubResource("CircleShape2D_8x8ob")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

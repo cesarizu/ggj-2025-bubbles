@@ -1,17 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjpm2y7qgut54"]
+[gd_scene load_steps=6 format=3 uid="uid://cjpm2y7qgut54"]
 
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="1_77kjh"]
 [ext_resource type="Script" path="res://game/bubble/bubble_test.gd" id="1_wssxx"]
+[ext_resource type="Texture2D" uid="uid://ddf80tyto4oqt" path="res://icon.svg" id="2_rgeyu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4w31c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ifq7"]
+normal = Vector2(0, 1)
 
 [node name="BubbleTest" type="Node2D"]
 script = ExtResource("1_wssxx")
 
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(598, 506)
+texture = ExtResource("2_rgeyu")
+
 [node name="Bubble" parent="." instance=ExtResource("1_77kjh")]
+position = Vector2(619, 505)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(872, 901)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape2D_4w31c")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(857, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(-4, -1)
+shape = SubResource("WorldBoundaryShape2D_3ifq7")
