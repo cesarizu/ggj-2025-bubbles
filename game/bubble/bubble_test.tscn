@@ -17,7 +17,7 @@ position = Vector2(611, 501)
 texture = ExtResource("2_rgeyu")
 
 [node name="Bubble" parent="." instance=ExtResource("1_77kjh")]
-position = Vector2(571, 555)
+position = Vector2(468, 522)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(872, 901)

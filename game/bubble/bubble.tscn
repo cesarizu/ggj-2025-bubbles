@@ -54,7 +54,6 @@ alpha_curve = SubResource("CurveTexture_jpsyi")
 radius = 60.0
 
 [node name="Bubble" type="RigidBody2D"]
-position = Vector2(708, 526)
 collision_layer = 3
 collision_mask = 13
 mass = 0.01
@@ -69,13 +68,11 @@ metadata/_edit_group_ = true
 unique_name_in_owner = true
 texture_filter = 6
 material = SubResource("ShaderMaterial_mhwbl")
-position = Vector2(183, -27)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6q6au")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(19, 4)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_h7p6r")
@@ -88,7 +85,6 @@ trail_lifetime = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-visible = false
 shape = SubResource("CircleShape2D_8x8ob")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
