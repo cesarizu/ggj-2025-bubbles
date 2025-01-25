@@ -6,6 +6,7 @@ extends RigidBody2D
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var circle_shape_2d: CircleShape2D = %CollisionShape2D.shape
+@onready var gpu_particles_2d: GPUParticles2D = %GPUParticles2D
 
 var _original_scale: Vector2
 var _original_radius: float
@@ -34,6 +35,11 @@ func drip_down() -> void:
 	apply_central_impulse(Vector2.DOWN * 25 * mass)
 	scale_bubble(shrink_factor)
 	wobble()
+
+
+func pop() -> void:
+	gpu_particles_2d.emitting = true
+	sprite_2d.self_modulate.a = 0
 
 
 func scale_bubble(factor: float) -> void:

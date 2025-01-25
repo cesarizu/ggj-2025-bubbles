@@ -10,6 +10,9 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_BACKSPACE:
 		bubble.drip_down()
 
+	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
+		bubble.pop()
+
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_UP:
 		bubble.scale_bubble(1.1)
 
