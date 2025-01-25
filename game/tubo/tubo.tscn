@@ -23,6 +23,7 @@ position = Vector2(0, -107.63)
 emitting = false
 amount = 54
 lifetime = 1.5
+local_coords = true
 texture = ExtResource("2_fia6x")
 direction = Vector2(0, -1)
 spread = 12.0
