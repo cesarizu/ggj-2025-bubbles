@@ -3,14 +3,15 @@ extends Node2D
 @onready var background: Sprite2D = $background
 const SPIKE = preload("res://game/spike/spike.tscn")
 const PIPE = preload("res://game/tubo/tubo.tscn")
-
 @export var progress = 0
+@export var pipe_density := 0.5  #between 0.0 and 1.0
 var cur_spikes = []
 var cur_pipes = []
 var speed := 100
 var tile_width := 420
 var tiles_in_screen_width := 6
-var pipe_density := 2.0  #between 0.0 and 10.0
+
+var respawn_bias = 0
 
 func _ready():
 	instanciate_spikes()
@@ -40,10 +41,10 @@ func move_background(delta: float):
 	background.region_rect.position.x += speed/2 * delta
 
 func instanciate_pipes():
-	for i in range(pipe_density):
+	for i in range(3):
 		var pipe = PIPE.instantiate()
 		pipe.position.y = 1080
-		pipe.position.x = 1920/pipe_density * (i + 1) - 100 #100 is bias
+		pipe.position.x = 1920/3 * (i + 1) - 100 #100 is bias
 		add_child(pipe)
 		cur_pipes.append(pipe)
 
@@ -64,9 +65,12 @@ func instanciate_spikes():
 
 
 func _on_timer_timeout() -> void:
-	if randf() * 10 < pipe_density:
+	if randf() < pipe_density  * (respawn_bias * 0.5):
 		var pipe = PIPE.instantiate()
 		pipe.position.y = 1080
 		pipe.position.x = 2000
 		add_child(pipe)
 		cur_pipes.append(pipe)
+		respawn_bias = 0
+	else:
+		respawn_bias += 1
