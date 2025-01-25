@@ -8,7 +8,8 @@ extends RigidBody2D
 @onready var circle_shape_2d: CircleShape2D = %CollisionShape2D.shape
 @onready var gpu_particles_2d: GPUParticles2D = %GPUParticles2D
 
-var _original_scale: Vector2
+var _original_sprite_scale: Vector2
+var _original_particles_scale: Vector2
 var _original_radius: float
 
 var bubble_scale := 1.0:
@@ -21,7 +22,8 @@ var _wooble_id := 0
 
 
 func _ready() -> void:
-	_original_scale = sprite_2d.scale
+	_original_sprite_scale = sprite_2d.scale
+	_original_particles_scale = gpu_particles_2d.scale
 	_original_radius = circle_shape_2d.radius
 
 
@@ -39,7 +41,7 @@ func drip_down() -> void:
 
 func pop() -> void:
 	gpu_particles_2d.emitting = true
-	sprite_2d.self_modulate.a = 0
+	sprite_2d.hide()
 
 
 func scale_bubble(factor: float) -> void:
@@ -57,7 +59,7 @@ func wobble() -> void:
 		var tween1 := create_tween()
 		var tween2 := create_tween()
 
-		var scale := Vector2.ONE * _original_scale * bubble_scale
+		var scale := Vector2.ONE * _original_sprite_scale * bubble_scale
 		var factor := 0.2 / (a + 1)
 
 		tween1.tween_property(sprite_2d, "skew", rand_dir * factor / 2, speed)
@@ -80,7 +82,8 @@ func wobble() -> void:
 
 
 func _update_size() -> void:
-	sprite_2d.scale = _original_scale * bubble_scale
+	sprite_2d.scale = _original_sprite_scale * bubble_scale
+	gpu_particles_2d.scale = _original_particles_scale * bubble_scale
 	circle_shape_2d.radius = _original_radius * bubble_scale
 
 

@@ -71,9 +71,9 @@ position = Vector2(19, 4)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6q6au")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(5, 5)
+position = Vector2(19, 4)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_h7p6r")
