@@ -10,12 +10,14 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="Gradient" id="Gradient_vfjg2"]
-offsets = PackedFloat32Array(0, 0.321799, 0.522491, 0.740484, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.405723, 1.68458e-07, 0.183317, 1, 1.20327e-07, 0.486048, 0.344275, 1, 1, 0.352108, 0.622032, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.207612, 0.49827, 0.775087, 0.989619)
+colors = PackedColorArray(0.711761, 0.497182, 1, 0.733333, 0.992255, 0.324332, 0.854821, 0.415686, 0.498039, 0.509804, 0.52549, 0, 0.254902, 0.709804, 0.807843, 0.415686, 0.254902, 0.615686, 0.941176, 0.415686)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gwoit"]
 noise_type = 2
-frequency = 0.0017
+frequency = 0.0042
+fractal_type = 2
+fractal_octaves = 10
 cellular_return_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_acbcy"]
@@ -67,7 +69,7 @@ metadata/_edit_group_ = true
 unique_name_in_owner = true
 texture_filter = 6
 material = SubResource("ShaderMaterial_mhwbl")
-position = Vector2(19, 4)
+position = Vector2(183, -27)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6q6au")
 

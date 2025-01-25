@@ -13,11 +13,11 @@ normal = Vector2(0, 1)
 script = ExtResource("1_wssxx")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(598, 506)
+position = Vector2(611, 501)
 texture = ExtResource("2_rgeyu")
 
 [node name="Bubble" parent="." instance=ExtResource("1_77kjh")]
-position = Vector2(619, 505)
+position = Vector2(571, 555)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(872, 901)

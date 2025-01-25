@@ -1,7 +1,14 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture; 
-uniform sampler2D noise;
+uniform sampler2D noise : repeat_enable;
+
+vec2 rotate(vec2 uv, float angle) {
+	mat2 rotation = mat2(vec2(sin(angle), -cos(angle)),
+						vec2(cos(angle), sin(angle)));
+	uv = uv * rotation;
+	return uv;
+}
 
 void fragment() {
 	vec4 color = texture(TEXTURE, UV);
@@ -10,6 +17,8 @@ void fragment() {
 	vec2 screen_uv = SCREEN_UV;
 	vec2 l = UV - vec2(0.5);
 	screen_uv += l * pow(length(l), 3) * SCREEN_PIXEL_SIZE * 4000.0;
-	COLOR = inside * (texture(screen_texture , screen_uv) + 0.5 * texture(noise, UV / 4.0 + vec2(mod(TIME / 50.0, 1.0) - 0.5))) + color;
+	vec2 time_mov = vec2(mod(TIME / 10.0, 1.0) - 0.5);
+	vec2 noise_uv = rotate(vec2(0, UV.x), UV.y * 2.0 * PI);
+	COLOR = inside * (texture(screen_texture , screen_uv) + 0.5 * texture(noise, noise_uv + time_mov)) + color;
 }
 
