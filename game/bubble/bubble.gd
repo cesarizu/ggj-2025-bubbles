@@ -21,14 +21,21 @@ func _ready() -> void:
 	_original_radius = circle_shape_2d.radius
 
 
+func blow_up() -> void:
+	apply_central_impulse(Vector2.UP * 50 * mass)
+	scale_bubble(1.1)
+	wobble()
+
+
+func drip_down() -> void:
+	apply_central_impulse(Vector2.DOWN * 25 * mass)
+	scale_bubble(1.0 / 1.1)
+	wobble()
+
+
 func scale_bubble(factor: float) -> void:
 	var tween := create_tween()
 	tween.parallel().tween_property(self, "bubble_scale", bubble_scale * factor, 0.1)
-
-
-func blow_up() -> void:
-	apply_central_impulse(Vector2.UP * 50)
-	wobble()
 
 
 func wobble() -> void:
