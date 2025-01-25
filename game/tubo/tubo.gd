@@ -6,14 +6,10 @@ var bubble: Bubble
 
 
 func _process(delta: float) -> void:
+	cpu_particles_2d.emitting = Input.is_action_pressed(&"blow")
+
 	if bubble and cpu_particles_2d.emitting:
 		bubble.blow_up(5.0 * bubble.position.y / get_viewport_rect().size.y * delta)
-
-
-func _on_click_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			cpu_particles_2d.emitting = event.pressed
 
 
 func _on_push_area_2d_body_entered(body: Node2D) -> void:
