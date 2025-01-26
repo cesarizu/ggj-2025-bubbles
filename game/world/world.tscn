@@ -16,6 +16,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="Bubble" parent="." instance=ExtResource("2_b8c1x")]
 position = Vector2(440, 548)
+grow_factor = 0.5
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5

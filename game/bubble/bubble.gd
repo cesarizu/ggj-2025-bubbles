@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func blow_up(amount: float) -> void:
 	apply_central_impulse(Vector2.UP * 50 * mass * amount)
-	scale_bubble(grow_factor * amount)
+	scale_bubble(grow_factor * amount/10)
 	wobble()
 
 

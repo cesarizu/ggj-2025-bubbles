@@ -1,9 +1,8 @@
-extends Sprite2D
+extends Node2D
 
 @onready var cpu_particles_2d: CPUParticles2D = %CPUParticles2D
 
 var bubble: Bubble
-
 
 func _process(delta: float) -> void:
 	cpu_particles_2d.emitting = Input.is_action_pressed(&"blow")

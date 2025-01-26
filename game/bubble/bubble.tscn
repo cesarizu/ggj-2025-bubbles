@@ -62,7 +62,7 @@ gravity_scale = 0.05
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_viwex")
-grow_factor = 0.01
+grow_factor = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

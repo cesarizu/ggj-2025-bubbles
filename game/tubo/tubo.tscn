@@ -7,10 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ujid"]
 size = Vector2(200, 1311.06)
 
-[node name="Tube" type="Sprite2D"]
+[node name="Tube" type="Node2D"]
 position = Vector2(-1, -96)
 scale = Vector2(0.682243, 0.754902)
-texture = ExtResource("1_krffv")
 script = ExtResource("2_56dob")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -35,6 +34,11 @@ scale_amount_max = 0.05
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea2D"]
 position = Vector2(0, -793.662)
 shape = SubResource("RectangleShape2D_8ujid")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -58.2857)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_krffv")
 
 [connection signal="body_entered" from="PushArea2D" to="." method="_on_push_area_2d_body_entered"]
 [connection signal="body_exited" from="PushArea2D" to="." method="_on_push_area_2d_body_exited"]
