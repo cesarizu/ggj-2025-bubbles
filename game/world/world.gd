@@ -1,17 +1,21 @@
 class_name World
 extends Node2D
 
+const ENEMY = preload("res://game/enemy/enemy_bubble.tscn")
 const PIPE = preload("res://game/tubo/tubo.tscn")
 
 @export var spikes: Array[PackedScene] = []
 @export var pipe_density := 0.5  #between 0.0 and 1.0
+@export var enemy_spawn_interval := 2.0
 
 @onready var background: Sprite2D = $background
+@onready var enemy_timer: Timer = $EnemySpawnTimer
 
 static var instance: World
 
 var cur_spikes = []
 var cur_pipes = []
+var cur_enemies = []
 var speed := 100
 var tile_width := 420
 var tiles_in_screen_width := 6
@@ -32,12 +36,16 @@ func _exit_tree() -> void:
 func _ready():
 	instantiate_spikes()
 	instantiate_pipes()
+	enemy_timer.wait_time = enemy_spawn_interval
+	enemy_timer.start()
+	enemy_timer.connect("timeout", Callable(self, "_spawn_enemy"))
 
 
 func _process(delta: float) -> void:
 	move_spikes(delta)
 	move_background(delta)
 	move_pipes(delta)
+	move_enemies(delta)
 	blow_bubble(delta)
 
 
@@ -58,6 +66,14 @@ func move_spikes(delta: float):
 
 func move_background(delta: float):
 	background.region_rect.position.x += speed/2 * delta
+
+
+func move_enemies(delta: float):
+	for enemy in cur_enemies:
+		enemy.position.x -= speed * delta
+		if enemy.position.x < -200:
+			cur_enemies.erase(enemy)
+			enemy.queue_free()
 
 
 func instantiate_pipes():
@@ -84,6 +100,13 @@ func instantiate_spikes():
 		top_spike.rotate_spike(true)
 		add_child(top_spike)
 		cur_spikes.append(top_spike)
+
+
+func _spawn_enemy() -> void:
+	var enemy = ENEMY.instantiate()
+	enemy.position = Vector2(2000, randf() * 1080)
+	add_child(enemy)
+	cur_enemies.append(enemy)
 
 
 func _on_timer_timeout() -> void:
