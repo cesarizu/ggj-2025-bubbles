@@ -1,3 +1,4 @@
+class_name World
 extends Node2D
 
 const SPIKE = preload("res://game/spike/spike.tscn")
@@ -7,6 +8,8 @@ const PIPE = preload("res://game/tubo/tubo.tscn")
 
 @onready var background: Sprite2D = $background
 
+static var instance: World
+
 var cur_spikes = []
 var cur_pipes = []
 var speed := 100
@@ -14,6 +17,14 @@ var tile_width := 420
 var tiles_in_screen_width := 6
 
 var respawn_bias = 0
+
+
+func _enter_tree() -> void:
+	instance = self
+
+
+func _exit_tree() -> void:
+	instance = null
 
 
 func _ready():
