@@ -5,7 +5,7 @@ extends Node2D
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_SPACE:
-		bubble.blow_up(1.0)
+		bubble.blow_up(1.0, 0.01)
 
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_BACKSPACE:
 		bubble.drip_down()

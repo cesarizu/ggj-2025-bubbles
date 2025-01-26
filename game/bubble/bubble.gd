@@ -1,7 +1,7 @@
 class_name Bubble
 extends RigidBody2D
 
-@export var grow_factor := 0.01
+@export var grow_factor := 2.0
 @export var shrink_factor := -0.05
 @export var blow_up_force := 50.0
 @export var drip_down_force := 25.0
@@ -32,9 +32,9 @@ func _ready() -> void:
 	_original_radius = circle_shape_2d.radius
 
 
-func blow_up(amount: float) -> void:
-	apply_central_impulse(Vector2.UP * blow_up_force * mass * amount)
-	scale_bubble(grow_factor * amount)
+func blow_up(amount: float, delta: float) -> void:
+	apply_central_force(Vector2.UP * blow_up_force * mass * amount)
+	scale_bubble(grow_factor * amount * delta)
 	wobble()
 
 
