@@ -22,7 +22,6 @@ void fragment() {
 	vec2 noise_uv = rotate(vec2(0, UV.x), UV.y * 2.0 * PI);
 
 	COLOR = inside * (texture(screen_texture , screen_uv) +      // Screen deformation
-	                  0.5 * texture(noise, noise_uv + time_mov)) // Iridescent colors
+	                  0.7 * texture(noise, noise_uv + time_mov)) // Iridescent colors
 		  + color * bubble_color;                                               // Texture color
 }
-

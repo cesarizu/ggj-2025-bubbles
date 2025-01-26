@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjpm2y7qgut54"]
+[gd_scene load_steps=9 format=3 uid="uid://cjpm2y7qgut54"]
 
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="1_77kjh"]
 [ext_resource type="Script" path="res://game/bubble/bubble_test.gd" id="1_wssxx"]
 [ext_resource type="Texture2D" uid="uid://ddf80tyto4oqt" path="res://icon.svg" id="2_rgeyu"]
 [ext_resource type="PackedScene" uid="uid://cq0oagmscyjau" path="res://game/tubo/tubo.tscn" id="4_6k4el"]
 [ext_resource type="PackedScene" uid="uid://xrn1qsetglo4" path="res://game/drop/drop.tscn" id="5_5123c"]
+[ext_resource type="PackedScene" uid="uid://dofx62po7shq1" path="res://game/enemy/enemy_bubble.tscn" id="6_s7mgd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4w31c"]
 
@@ -17,9 +18,6 @@ script = ExtResource("1_wssxx")
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(611, 501)
 texture = ExtResource("2_rgeyu")
-
-[node name="Bubble" parent="." instance=ExtResource("1_77kjh")]
-position = Vector2(636, 434)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(872, 901)
@@ -39,3 +37,9 @@ position = Vector2(636, 982)
 
 [node name="Drop" parent="." instance=ExtResource("5_5123c")]
 position = Vector2(634, 208)
+
+[node name="Bubble" parent="." instance=ExtResource("1_77kjh")]
+position = Vector2(998, 417)
+
+[node name="EnemyBubble" parent="." instance=ExtResource("6_s7mgd")]
+position = Vector2(637, 400)

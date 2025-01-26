@@ -3,6 +3,8 @@ extends RigidBody2D
 
 @export var grow_factor := 0.01
 @export var shrink_factor := -0.05
+@export var blow_up_force := 50.0
+@export var drip_down_force := 25.0
 @export var puncture_factor := -0.2
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
@@ -31,13 +33,13 @@ func _ready() -> void:
 
 
 func blow_up(amount: float) -> void:
-	apply_central_impulse(Vector2.UP * 50 * mass * amount)
+	apply_central_impulse(Vector2.UP * blow_up_force * mass * amount)
 	scale_bubble(grow_factor * amount)
 	wobble()
 
 
 func drip_down() -> void:
-	apply_central_impulse(Vector2.DOWN * 25 * mass)
+	apply_central_impulse(Vector2.DOWN * drip_down_force * mass)
 	scale_bubble(shrink_factor)
 	wobble()
 
