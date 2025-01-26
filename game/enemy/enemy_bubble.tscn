@@ -35,6 +35,7 @@ collision_layer = 33
 input_pickable = true
 script = ExtResource("2_ffxfb")
 is_player = false
+grow_factor = 1.0
 shrink_factor = -0.2
 drip_down_force = 30.0
 min_size = 3

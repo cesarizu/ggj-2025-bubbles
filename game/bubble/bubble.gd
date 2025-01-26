@@ -74,6 +74,8 @@ func pop() -> void:
 	gpu_particles_2d.emitting = true
 	sprite_2d.hide()
 	$PlopAudioStreamPlayer2D.play()
+	await get_tree().create_timer(2).timeout
+	queue_free()
 
 
 func scale_bubble(factor: float) -> void:
@@ -134,3 +136,6 @@ func _update_size() -> void:
 func _on_body_entered(body: Node) -> void:
 	$DownAudioStreamPlayer2D2.play()
 	wobble()
+
+	if is_player and body is Bubble and not body.is_player:
+		puncture((position - body.position).normalized())

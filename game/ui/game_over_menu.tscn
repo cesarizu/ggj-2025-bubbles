@@ -26,3 +26,13 @@ text = "[b]GAME OVER[/b]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 883.0
+offset_right = 1256.0
+offset_bottom = 984.0
+text = "Return to main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
