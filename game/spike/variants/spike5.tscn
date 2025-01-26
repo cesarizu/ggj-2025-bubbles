@@ -2,13 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://cjmsit54p1bqu" path="res://game/spike/spike.tscn" id="1_rrljr"]
 
-[node name="Spike" instance=ExtResource("1_rrljr")]
+[node name="Spike5" instance=ExtResource("1_rrljr")]
+
+[node name="StaticBody2D" parent="." index="1"]
+collision_layer = 1
+collision_mask = 1
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(-266.25, 207, -265, 189.5, -133.75, 152, 8.75, -90.5, 70, 164.5, 260, 192, 258.75, 209.5)
+position = Vector2(2, -235)
+polygon = PackedVector2Array(-212, 206, -214, 177, -111, 147, 7, -44, 55, 152, 208, 181, 209, 204)
+
+[node name="PointArea2D" parent="." index="2"]
+collision_layer = 1
 
 [node name="CollisionShape2D" parent="PointArea2D" index="0"]
-position = Vector2(8.75, -81.75)
+position = Vector2(10, -277)
 
 [node name="Drop" parent="." index="3"]
-position = Vector2(176.25, -133.75)
+unique_name_in_owner = true
+position = Vector2(166, -117)

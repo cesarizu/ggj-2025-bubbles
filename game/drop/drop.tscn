@@ -90,10 +90,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c34w6"]
-radius = 33.0151
+radius = 42.0119
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2o7j"]
-size = Vector2(54, 115)
+size = Vector2(63, 121)
 
 [node name="Drop" type="Node2D"]
 script = ExtResource("1_2eapy")
@@ -115,7 +115,7 @@ collision_layer = 16
 collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropArea2D"]
-position = Vector2(-1, 5.5)
+position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_s2o7j")
 
 [connection signal="input_event" from="ClickArea2D" to="." method="_on_click_area_2d_input_event"]

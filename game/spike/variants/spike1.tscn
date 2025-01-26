@@ -4,23 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://0lej3ce13s88" path="res://game/spike/sprites/1.png" id="2_tk7xl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dmbta"]
-radius = 30.0
+radius = 3.0
 
-[node name="Spike" instance=ExtResource("1_ert7c")]
+[node name="Spike1" instance=ExtResource("1_ert7c")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_tk7xl")
 
+[node name="StaticBody2D" parent="." index="1"]
+position = Vector2(49, -241)
+collision_layer = 1
+collision_mask = 1
+
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(-262.5, 205, -198.75, 103.25, -146.25, 32, -37.5, 124.5, 58.75, -26.75, 117.5, -140.5, 263.75, 212)
+polygon = PackedVector2Array(-262.5, 205, -198.75, 103.25, -166, 55, -80, 129, -9, 24, 47, -81, 164, 203)
+
+[node name="PointArea2D" parent="." index="2"]
+collision_layer = 1
 
 [node name="CollisionShape2D" parent="PointArea2D" index="0"]
-position = Vector2(117.5, -131.25)
+position = Vector2(96, -322)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PointArea2D" index="1"]
-position = Vector2(-150, 41.25)
+position = Vector2(-115, -185)
 shape = SubResource("CircleShape2D_dmbta")
 
 [node name="Drop" parent="." index="3"]
 process_mode = 4
-visible = false
+position = Vector2(-30, 74)
+script = null
