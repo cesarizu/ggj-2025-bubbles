@@ -13,6 +13,7 @@
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_es287"]
+normal = Vector2(-1, 0)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gbawv")
@@ -33,7 +34,8 @@ wait_time = 1.5
 autostart = true
 
 [node name="BlowArea2D" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlowArea2D"]
 position = Vector2(256, 0)
@@ -41,7 +43,6 @@ shape = SubResource("WorldBoundaryShape2D_74m8t")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlowArea2D"]
 position = Vector2(1700, 0)
-rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_es287")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]

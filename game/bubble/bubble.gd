@@ -39,6 +39,7 @@ func _ready() -> void:
 	_original_sprite_scale = sprite_2d.scale
 	_original_particles_scale = gpu_particles_2d.scale
 	_original_radius = circle_shape_2d.radius
+	_update_size()
 
 
 func blow_up(amount: float, delta: float) -> void:
@@ -119,7 +120,7 @@ func _update_size() -> void:
 	circle_shape_2d.radius = _original_radius * bubble_scale
 
 	if is_player:
-		AudioManager.intensity = bubble_size
+		AudioManager.intensity = 1.0 - clampf(bubble_size / 6.0, 0.0, 1.0)
 
 	if bubble_size < 1.0:
 		pop()

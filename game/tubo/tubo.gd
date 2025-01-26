@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	cpu_particles_2d.emitting = Input.is_action_pressed(&"blow")
 	if $AudioStreamPlayer2D.playing != cpu_particles_2d.emitting:
 		$AudioStreamPlayer2D.playing = cpu_particles_2d.emitting
-	
+
 	if bubble and cpu_particles_2d.emitting:
 		bubble.blow_up(5.0 * bubble.position.y / get_viewport_rect().size.y, delta)
 
