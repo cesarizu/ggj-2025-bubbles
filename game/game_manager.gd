@@ -12,6 +12,7 @@ var level := 1
 
 
 func new_game() -> void:
+	AudioManager.play_music()
 	get_tree().change_scene_to_packed(INSTRUCTIONS_MENU)
 
 
@@ -22,6 +23,7 @@ func start_game() -> void:
 
 
 func game_over() -> void:
+	AudioManager.game_over()
 	playing = false
 	pass
 

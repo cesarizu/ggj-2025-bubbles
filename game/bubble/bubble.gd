@@ -102,6 +102,7 @@ func _update_size() -> void:
 	sprite_2d.scale = _original_sprite_scale * bubble_scale
 	gpu_particles_2d.scale = _original_particles_scale * bubble_scale
 	circle_shape_2d.radius = _original_radius * bubble_scale
+	AudioManager.intensity = bubble_scale / 6.0
 
 
 func _on_body_entered(body: Node) -> void:
