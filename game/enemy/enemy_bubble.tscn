@@ -30,10 +30,10 @@ shader_parameter/noise = SubResource("NoiseTexture2D_acbcy")
 collision_layer = 33
 input_pickable = true
 script = ExtResource("2_ffxfb")
-min_size = 3
-size_factor = 5.0
+is_player = false
 shrink_factor = -0.2
 drip_down_force = 30.0
+min_size = 3
 
 [node name="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_00x1s")

@@ -23,9 +23,8 @@ func start_game() -> void:
 
 
 func game_over() -> void:
-	AudioManager.game_over()
 	playing = false
-	pass
+	get_tree().change_scene_to_packed(GAME_OVER_MENU)
 
 
 func main_menu() -> void:
@@ -39,10 +38,6 @@ func instructions_menu() -> void:
 
 func credits_menu() -> void:
 	get_tree().change_scene_to_packed(CREDITS_MENU)
-
-
-func game_over_menu() -> void:
-	get_tree().change_scene_to_packed(GAME_OVER_MENU)
 
 
 func pause(paused: bool) -> void:

@@ -1,11 +1,14 @@
 class_name Bubble
 extends RigidBody2D
 
+@export var is_player := true
 @export var grow_factor := 2.0
 @export var shrink_factor := -0.05
 @export var blow_up_force := 50.0
 @export var drip_down_force := 25.0
 @export var puncture_factor := -0.2
+@export var size_factor := 5.0
+@export var min_size := 2
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var circle_shape_2d: CircleShape2D = %CollisionShape2D.shape
@@ -22,6 +25,10 @@ var bubble_scale := 1.0:
 		if value != bubble_scale:
 			bubble_scale = value
 			_update_size()
+
+var bubble_size: int:
+	get:
+		return roundi(bubble_scale * size_factor) - min_size
 
 var _wooble_id := 0
 
@@ -107,7 +114,17 @@ func _update_size() -> void:
 	sprite_2d.scale = _original_sprite_scale * bubble_scale
 	gpu_particles_2d.scale = _original_particles_scale * bubble_scale
 	circle_shape_2d.radius = _original_radius * bubble_scale
-	AudioManager.intensity = bubble_scale / 6.0
+
+	if is_player:
+		AudioManager.intensity = bubble_size
+
+	if bubble_size < 1.0:
+		pop()
+
+		if is_player:
+			AudioManager.game_over()
+			await get_tree().create_timer(2).timeout
+			GameManager.game_over()
 
 
 func _on_body_entered(body: Node) -> void:
