@@ -14,13 +14,13 @@ collision_mask = 1
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(31, -213)
-polygon = PackedVector2Array(-241, 195, -242, 137, -231, 26, -215, -58, -180, 126, -100, 94, -39, 61, 9, 83, 107, 118, 180, 150, 180, 194)
+polygon = PackedVector2Array(-241, 212, -242, 137, -231, 26, -215, -58, -180, 126, -100, 94, -39, 61, 9, 83, 107, 118, 180, 150, 179, 212)
 
 [node name="PointArea2D" parent="." index="2"]
 collision_layer = 1
 
 [node name="CollisionShape2D" parent="PointArea2D" index="0"]
-position = Vector2(-184, -266)
+position = Vector2(-184, -271)
 
 [node name="Drop" parent="." index="3"]
 position = Vector2(-7, -198)

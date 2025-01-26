@@ -17,7 +17,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(-262.5, 205, -198.75, 103.25, -166, 55, -80, 129, -9, 24, 47, -81, 164, 203)
+polygon = PackedVector2Array(-259, 190, -198.75, 103.25, -166, 55, -80, 129, -9, 24, 47, -81, 161, 198, 163, 239, -260, 239)
 
 [node name="PointArea2D" parent="." index="2"]
 collision_layer = 1
@@ -26,7 +26,7 @@ collision_layer = 1
 position = Vector2(96, -322)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PointArea2D" index="1"]
-position = Vector2(-115, -185)
+position = Vector2(-117, -186)
 shape = SubResource("CircleShape2D_dmbta")
 
 [node name="Drop" parent="." index="3"]
