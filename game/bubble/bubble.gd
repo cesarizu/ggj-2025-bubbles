@@ -130,4 +130,5 @@ func _update_size() -> void:
 
 
 func _on_body_entered(body: Node) -> void:
+	$DownAudioStreamPlayer2D2.play()
 	wobble()
