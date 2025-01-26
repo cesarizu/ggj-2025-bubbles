@@ -23,7 +23,9 @@ collision_mask = 35
 polygon = PackedVector2Array(-262.5, 205, -132.5, 152.5, 3.5, -95.75, 71.25, 168.75, 263.75, 203.75)
 
 [node name="PointArea2D" type="Area2D" parent="."]
-collision_layer = 2
+position = Vector2(0, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea2D"]
 position = Vector2(8.75, -78.75)
@@ -33,3 +35,5 @@ shape = SubResource("CircleShape2D_dmbta")
 unique_name_in_owner = true
 position = Vector2(176.25, -128.25)
 rotation = 3.14159
+
+[connection signal="body_entered" from="PointArea2D" to="." method="_on_point_area_2d_body_entered"]
