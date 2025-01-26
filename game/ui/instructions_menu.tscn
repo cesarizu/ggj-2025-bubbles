@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqpguxbbw8sfp"]
+
+[ext_resource type="Script" path="res://game/ui/instructions_menu.gd" id="1_t8ynu"]
+
+[node name="InstructionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t8ynu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.0
+offset_top = 58.0
+offset_right = 309.0
+offset_bottom = 239.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[b]INSTRUCTIONS[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
