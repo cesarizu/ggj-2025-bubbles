@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1n83a2y6osp5"]
+[gd_scene load_steps=10 format=3 uid="uid://1n83a2y6osp5"]
 
 [ext_resource type="Script" path="res://game/world/world.gd" id="1_gbawv"]
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="2_b8c1x"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cv2qc2r1p3km1" path="res://game/spike/variants/spike3.tscn" id="4_ay0la"]
 [ext_resource type="PackedScene" uid="uid://dfh3sbhls7kg8" path="res://game/spike/variants/spike4.tscn" id="5_tvne6"]
 [ext_resource type="PackedScene" uid="uid://b42fj38ghy8eu" path="res://game/spike/variants/spike5.tscn" id="6_al74s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74m8t"]
+normal = Vector2(1, 0)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gbawv")
@@ -27,4 +30,12 @@ position = Vector2(440, 548)
 wait_time = 1.5
 autostart = true
 
+[node name="BlowArea2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlowArea2D"]
+position = Vector2(256, 0)
+shape = SubResource("WorldBoundaryShape2D_74m8t")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="BlowArea2D" to="." method="_on_blow_area_2d_body_entered"]

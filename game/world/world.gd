@@ -18,6 +18,8 @@ var tiles_in_screen_width := 6
 
 var respawn_bias = 0
 
+var bubble: Bubble
+
 
 func _enter_tree() -> void:
 	instance = self
@@ -36,6 +38,7 @@ func _process(delta: float) -> void:
 	move_spikes(delta)
 	move_background(delta)
 	move_pipes(delta)
+	blow_bubble(delta)
 
 
 func move_pipes(delta: float):
@@ -93,3 +96,18 @@ func _on_timer_timeout() -> void:
 		respawn_bias = 0
 	else:
 		respawn_bias += 1
+
+
+func blow_bubble(delta: float) -> void:
+	if bubble and bubble.position.x < 256.0:
+		var amount := 1.0 - (bubble.position.x / 256.0)
+		var force := amount * Vector2(1.0, -sign(bubble.position.y - 520))
+		bubble.apply_central_force(100 * force * delta)
+
+
+func _on_blow_area_2d_body_entered(body: Node2D) -> void:
+	bubble = body as Bubble
+
+
+func _on_blow_area_2d_body_exited(body: Node2D) -> void:
+	bubble = null
