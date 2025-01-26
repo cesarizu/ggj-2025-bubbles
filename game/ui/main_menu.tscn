@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfgrvrnpsf8ae"]
+[gd_scene load_steps=7 format=3 uid="uid://cfgrvrnpsf8ae"]
 
 [ext_resource type="Script" path="res://game/ui/main_menu.gd" id="1_hpxi6"]
+[ext_resource type="Texture2D" uid="uid://odpsxlphgpxy" path="res://game/logo.png" id="2_d18wc"]
+[ext_resource type="Texture2D" uid="uid://cv4p8ap6xq8b4" path="res://game/world/background.jpg" id="2_ihmjj"]
 
 [sub_resource type="Animation" id="Animation_yk6yl"]
 length = 0.001
@@ -47,22 +49,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hpxi6")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(961, 581)
+scale = Vector2(1.95996, 1.19531)
+texture = ExtResource("2_ihmjj")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -410.5
-offset_top = -281.5
-offset_right = 410.5
-offset_bottom = 281.5
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.565
+anchor_right = 0.498
+anchor_bottom = 0.565
+offset_left = -414.16
+offset_top = -10.2
+offset_right = 414.84
+offset_bottom = 412.8
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 128
 
 [node name="Title" type="RichTextLabel" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][b]THE BUBBLE GAME[/b][/center]"
@@ -96,6 +104,11 @@ libraries = {
 "": SubResource("AnimationLibrary_bihvm")
 }
 autoplay = "fade_in"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(951, 349)
+scale = Vector2(0.55957, 0.55957)
+texture = ExtResource("2_d18wc")
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
