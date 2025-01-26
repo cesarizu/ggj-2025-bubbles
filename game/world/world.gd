@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name World
+
 @onready var background: Sprite2D = $background
 const SPIKE = preload("res://game/spike/spike.tscn")
 const PIPE = preload("res://game/tubo/tubo.tscn")
@@ -10,7 +12,6 @@ var cur_pipes = []
 var speed := 100
 var tile_width := 420
 var tiles_in_screen_width := 6
-
 var respawn_bias = 0
 
 func _ready():
@@ -49,17 +50,20 @@ func instanciate_pipes():
 		cur_pipes.append(pipe)
 
 func instanciate_spikes():
+	#these are the downwrads spikes
 	for i in range(tiles_in_screen_width):
 		var spike = SPIKE.instantiate()
 		spike.position.y = 870
 		spike.position.x = tile_width * i
 		add_child(spike)
 		cur_spikes.append(spike)
+	#these are the upwards spikes
 	for i in range(tiles_in_screen_width):
-		var spike = SPIKE.instantiate()
+		var spike:Spike = SPIKE.instantiate()
 		spike.position.y = 210
 		spike.position.x = tile_width * i
 		spike.rotation_degrees = 180
+		spike.is_upwards = true
 		add_child(spike)
 		cur_spikes.append(spike)
 

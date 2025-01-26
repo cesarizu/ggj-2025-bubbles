@@ -23,11 +23,31 @@ position = Vector2(4, 22)
 polygon = PackedVector2Array(-264, 206, -147, 39, -36, 128, 111, -123, 258, 198)
 disabled = true
 
+[node name="drop_spawner" type="Node2D" parent="StaticBody2D/c_0"]
+position = Vector2(-130.25, 91.75)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
+[node name="drop_spawner2" type="Node2D" parent="StaticBody2D/c_0"]
+position = Vector2(151, 1.75)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
 [node name="c_1" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(4, 22)
 polygon = PackedVector2Array(-264, 206, -143, 28, 86, 67, 213, 9, 258, 198)
 disabled = true
+
+[node name="drop_spawner3" type="Node2D" parent="StaticBody2D/c_1"]
+position = Vector2(-81.5, 54.25)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
+[node name="drop_spawner4" type="Node2D" parent="StaticBody2D/c_1"]
+position = Vector2(161, 46.75)
+rotation = -3.14159
+scale = Vector2(1, 1)
 
 [node name="c_2" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
@@ -35,14 +55,38 @@ position = Vector2(4, 22)
 polygon = PackedVector2Array(-264, 206, -238, -50, -201, 149, -14, 64, 193, 151, 258, 198)
 disabled = true
 
+[node name="drop_spawner5" type="Node2D" parent="StaticBody2D/c_2"]
+position = Vector2(-121.5, 123)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
+[node name="drop_spawner6" type="Node2D" parent="StaticBody2D/c_2"]
+position = Vector2(109.75, 130.5)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
 [node name="c_3" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(4, 22)
 polygon = PackedVector2Array(-264, 206, -139, 87, -83, 147, 146, 99, 217, 144, 258, 198)
 disabled = true
 
+[node name="drop_spawner7" type="Node2D" parent="StaticBody2D/c_3"]
+position = Vector2(-17.75, 148)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
+[node name="drop_spawner8" type="Node2D" parent="StaticBody2D/c_3"]
+position = Vector2(152.25, 139.25)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
 [node name="c_4" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(4, 22)
 polygon = PackedVector2Array(-264, 206, -90, 130, -5, -63, 52, 156, 258, 198)
 disabled = true
+
+[node name="drop_spawner9" type="Node2D" parent="StaticBody2D/c_4"]
+position = Vector2(114.75, 165.5)
+rotation = -3.14159
+scale = Vector2(1, 1)
