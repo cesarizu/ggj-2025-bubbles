@@ -45,12 +45,14 @@ func blow_up(amount: float, delta: float) -> void:
 	apply_central_force(Vector2.UP * blow_up_force * mass * amount)
 	scale_bubble(grow_factor * amount * delta)
 	wobble()
+	#$GrowAudioStreamPlayer2D.play()
 
 
 func drip_down() -> void:
 	apply_central_impulse(Vector2.DOWN * drip_down_force * mass)
 	scale_bubble(shrink_factor)
 	wobble()
+	$DownAudioStreamPlayer2D2.play()
 
 
 func puncture(direction: Vector2) -> void:

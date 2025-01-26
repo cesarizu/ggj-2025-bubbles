@@ -13,6 +13,7 @@ func _on_click_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx:
 
 	if event is InputEventMouseButton and event.is_pressed():
 		animated_sprite_2d.play("drip1")
+		$AudioStreamPlayer2D.play()
 		_dripping = true
 		await get_tree().create_timer(1).timeout
 		animated_sprite_2d.play("still")

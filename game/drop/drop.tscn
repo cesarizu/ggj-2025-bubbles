@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://xrn1qsetglo4"]
+[gd_scene load_steps=17 format=3 uid="uid://xrn1qsetglo4"]
 
 [ext_resource type="Script" path="res://game/drop/drop.gd" id="1_2eapy"]
 [ext_resource type="Texture2D" uid="uid://btpok7ldjpcl4" path="res://game/drop/drop_spritesheet.png" id="1_vijbt"]
+[ext_resource type="AudioStream" uid="uid://d2vdmif32doju" path="res://game/audio/sfx/Waterdrop.wav" id="3_my0il"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_admvp"]
 atlas = ExtResource("1_vijbt")
@@ -117,6 +118,9 @@ collision_mask = 34
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropArea2D"]
 position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_s2o7j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_my0il")
 
 [connection signal="input_event" from="ClickArea2D" to="." method="_on_click_area_2d_input_event"]
 [connection signal="body_entered" from="DropArea2D" to="." method="_on_drop_area_2d_body_entered"]

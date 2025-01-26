@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq0oagmscyjau"]
+[gd_scene load_steps=7 format=3 uid="uid://cq0oagmscyjau"]
 
 [ext_resource type="Texture2D" uid="uid://icj2weqymvij" path="res://game/tubo/tubo.png" id="1_krffv"]
 [ext_resource type="Script" path="res://game/tubo/tubo.gd" id="2_56dob"]
 [ext_resource type="Texture2D" uid="uid://bckhd8pmwtotb" path="res://game/bubble/bubble.svg" id="2_fia6x"]
 [ext_resource type="Texture2D" uid="uid://by4a08u3yq7pa" path="res://game/tubo/tubo_back.png" id="3_fe30f"]
+[ext_resource type="AudioStream" uid="uid://b3lx1pgy01y0f" path="res://game/audio/sfx/Burbujas_tubo.wav" id="5_0asfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ujid"]
 size = Vector2(200, 1311.06)
@@ -47,6 +48,10 @@ collision_mask = 34
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea2D"]
 position = Vector2(0, -793.662)
 shape = SubResource("RectangleShape2D_8ujid")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-2.93151, -143.065)
+stream = ExtResource("5_0asfa")
 
 [connection signal="body_entered" from="PushArea2D" to="." method="_on_push_area_2d_body_entered"]
 [connection signal="body_exited" from="PushArea2D" to="." method="_on_push_area_2d_body_exited"]
