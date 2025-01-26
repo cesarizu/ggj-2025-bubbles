@@ -72,6 +72,7 @@ func pop() -> void:
 	_is_popped = true
 	gpu_particles_2d.emitting = true
 	sprite_2d.hide()
+	$PlopAudioStreamPlayer2D.play()
 
 
 func scale_bubble(factor: float) -> void:
