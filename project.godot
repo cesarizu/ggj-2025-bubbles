@@ -13,6 +13,7 @@ config_version=5
 config/name="ggj-2025-bubbles"
 run/main_scene="res://game/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3")
+boot_splash/image="res://game/logo.png"
 config/icon="res://icon.svg"
 
 [autoload]
