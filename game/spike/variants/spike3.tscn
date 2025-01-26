@@ -1,17 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cv2qc2r1p3km1"]
 
 [ext_resource type="PackedScene" uid="uid://cjmsit54p1bqu" path="res://game/spike/spike.tscn" id="1_b2qax"]
-[ext_resource type="Texture2D" uid="uid://60jv0wogtvyr" path="res://game/spike/sprites/2.png" id="2_6bsbc"]
+[ext_resource type="Texture2D" uid="uid://c11whh6stry23" path="res://game/spike/sprites/3.png" id="2_ff6o4"]
 
 [node name="Spike" instance=ExtResource("1_b2qax")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_6bsbc")
+texture = ExtResource("2_ff6o4")
 
-[node name="PointArea2D" parent="." index="2"]
-visible = false
-monitoring = false
-monitorable = false
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-262.5, 205, -260, 134.5, -232.5, -94.25, -183.75, 148.25, -100, 118.25, -17.5, 73.25, 107.5, 117, 262.5, 185.75, 261.25, 204.5)
+
+[node name="CollisionShape2D" parent="PointArea2D" index="0"]
+position = Vector2(-231.25, -86.75)
 
 [node name="Drop" parent="." index="3"]
-position = Vector2(92.5, 23.75)
+position = Vector2(-2.5, -236.25)

@@ -8,11 +8,13 @@
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_qbgmw")
 
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-262.5, 205, -220, 132, -142.5, 29.5, 86.25, 72, 216.25, 14.5, 263.75, 203.75)
+
 [node name="PointArea2D" parent="." index="2"]
 visible = false
 monitoring = false
 monitorable = false
 
 [node name="Drop" parent="." index="3"]
-unique_name_in_owner = true
-position = Vector2(92.5, 23.75)
+position = Vector2(8.75, -257.5)

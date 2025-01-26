@@ -11,6 +11,9 @@ radius = 30.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_tk7xl")
 
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-262.5, 205, -198.75, 103.25, -146.25, 32, -37.5, 124.5, 58.75, -26.75, 117.5, -140.5, 263.75, 212)
+
 [node name="CollisionShape2D" parent="PointArea2D" index="0"]
 position = Vector2(117.5, -131.25)
 
