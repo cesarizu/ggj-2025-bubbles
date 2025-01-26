@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b42fj38ghy8eu"]
+
+[ext_resource type="PackedScene" uid="uid://cjmsit54p1bqu" path="res://game/spike/spike.tscn" id="1_rrljr"]
+[ext_resource type="Texture2D" uid="uid://60jv0wogtvyr" path="res://game/spike/sprites/2.png" id="2_lh1n3"]
+
+[node name="Spike" instance=ExtResource("1_rrljr")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lh1n3")
+
+[node name="PointArea2D" parent="." index="2"]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="Drop" parent="." index="3"]
+position = Vector2(92.5, 23.75)

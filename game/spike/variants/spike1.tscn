@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cehh0cq3f860k"]
+
+[ext_resource type="PackedScene" uid="uid://cjmsit54p1bqu" path="res://game/spike/spike.tscn" id="1_ert7c"]
+[ext_resource type="Texture2D" uid="uid://0lej3ce13s88" path="res://game/spike/sprites/1.png" id="2_tk7xl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmbta"]
+radius = 30.0
+
+[node name="Spike" instance=ExtResource("1_ert7c")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_tk7xl")
+
+[node name="CollisionShape2D" parent="PointArea2D" index="0"]
+position = Vector2(117.5, -131.25)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PointArea2D" index="1"]
+position = Vector2(-150, 41.25)
+shape = SubResource("CircleShape2D_dmbta")
+
+[node name="Drop" parent="." index="3"]
+process_mode = 4
+visible = false

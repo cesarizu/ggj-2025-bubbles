@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://1n83a2y6osp5"]
+[gd_scene load_steps=9 format=3 uid="uid://1n83a2y6osp5"]
 
 [ext_resource type="Script" path="res://game/world/world.gd" id="1_gbawv"]
 [ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="2_b8c1x"]
+[ext_resource type="PackedScene" uid="uid://cehh0cq3f860k" path="res://game/spike/variants/spike1.tscn" id="2_cs6oh"]
+[ext_resource type="PackedScene" uid="uid://kntp05gncky7" path="res://game/spike/variants/spike2.tscn" id="3_sqex3"]
 [ext_resource type="Texture2D" uid="uid://cv4p8ap6xq8b4" path="res://game/world/background.jpg" id="3_vtkvb"]
+[ext_resource type="PackedScene" uid="uid://cv2qc2r1p3km1" path="res://game/spike/variants/spike3.tscn" id="4_ay0la"]
+[ext_resource type="PackedScene" uid="uid://dfh3sbhls7kg8" path="res://game/spike/variants/spike4.tscn" id="5_tvne6"]
+[ext_resource type="PackedScene" uid="uid://b42fj38ghy8eu" path="res://game/spike/variants/spike5.tscn" id="6_al74s"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gbawv")
+spikes = Array[PackedScene]([ExtResource("2_cs6oh"), ExtResource("3_sqex3"), ExtResource("4_ay0la"), ExtResource("5_tvne6"), ExtResource("6_al74s")])
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2

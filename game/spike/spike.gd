@@ -1,20 +1,8 @@
+class_name Spike
 extends Node2D
 
-class_name Spike
 
-@export var sprites: Array[Texture2D] = []
-var ran_index
-
-func _ready() -> void:
-	#turn off all spikes
-	for col in $StaticBody2D.get_children():
-		col.disabled = true
-		col.visible = false
-	
-	ran_index = randi_range(0, 4)
-	$Sprite2D.texture = sprites[ran_index]
-	$StaticBody2D.get_child(ran_index).disabled = false
-	$StaticBody2D.get_child(ran_index).visible = true
-
-func _process(delta: float) -> void:
-	pass
+func rotate_spike(upside_down: bool) -> void:
+	rotation_degrees = 180 if upside_down else 0
+	%Drop.visible = upside_down
+	%Drop.process_mode = Node.PROCESS_MODE_DISABLED if upside_down else Node.PROCESS_MODE_INHERIT
