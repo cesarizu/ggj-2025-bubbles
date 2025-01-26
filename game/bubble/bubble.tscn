@@ -27,6 +27,7 @@ noise = SubResource("FastNoiseLite_gwoit")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mhwbl"]
 shader = ExtResource("2_i2o1x")
+shader_parameter/bubble_color = Color(1, 1, 1, 1)
 shader_parameter/noise = SubResource("NoiseTexture2D_acbcy")
 
 [sub_resource type="Curve" id="Curve_yegg8"]
@@ -55,20 +56,20 @@ radius = 60.0
 
 [node name="Bubble" type="RigidBody2D"]
 collision_layer = 3
-collision_mask = 13
+collision_mask = 61
 mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_dea1h")
 gravity_scale = 0.03
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_viwex")
-grow_factor = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 6
 material = SubResource("ShaderMaterial_mhwbl")
+position = Vector2(1, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6q6au")
 

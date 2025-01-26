@@ -1,7 +1,7 @@
 class_name Bubble
 extends RigidBody2D
 
-@export var grow_factor := 0.5
+@export var grow_factor := 0.01
 @export var shrink_factor := -0.05
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func blow_up(amount: float) -> void:
 	apply_central_impulse(Vector2.UP * 50 * mass * amount)
-	scale_bubble(grow_factor * amount/10)
+	scale_bubble(grow_factor * amount)
 	wobble()
 
 
@@ -46,8 +46,8 @@ func pop() -> void:
 
 func scale_bubble(factor: float) -> void:
 	var target := 1.0 + factor;
-	var tween := create_tween()
-	tween.parallel().tween_property(self, "bubble_scale", bubble_scale * target, 0.1)
+
+	create_tween().tween_property(self, "bubble_scale", bubble_scale * target, 0.1)
 
 
 func wobble() -> void:

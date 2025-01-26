@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dofx62po7shq1"]
+
+[ext_resource type="PackedScene" uid="uid://cim3dluv6hox2" path="res://game/bubble/bubble.tscn" id="1_t47wd"]
+[ext_resource type="Script" path="res://game/enemy/enemy_bubble.gd" id="2_ffxfb"]
+[ext_resource type="Shader" path="res://game/bubble/bubble.gdshader" id="2_t3blo"]
+
+[sub_resource type="Gradient" id="Gradient_vfjg2"]
+offsets = PackedFloat32Array(0, 0.207612, 0.49827, 0.775087, 0.989619)
+colors = PackedColorArray(0.711761, 0.497182, 1, 0.733333, 0.992255, 0.324332, 0.854821, 0.415686, 0.498039, 0.509804, 0.52549, 0, 0.254902, 0.709804, 0.807843, 0.415686, 0.254902, 0.615686, 0.941176, 0.415686)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gwoit"]
+noise_type = 2
+frequency = 0.0042
+fractal_type = 2
+fractal_octaves = 10
+cellular_return_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_acbcy"]
+seamless = true
+color_ramp = SubResource("Gradient_vfjg2")
+noise = SubResource("FastNoiseLite_gwoit")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00x1s"]
+shader = ExtResource("2_t3blo")
+shader_parameter/bubble_color = Color(0.255855, 0.588196, 0.126154, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_acbcy")
+
+[node name="EnemyBubble" instance=ExtResource("1_t47wd")]
+collision_layer = 33
+script = ExtResource("2_ffxfb")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_00x1s")
+
+[node name="Label" type="Label" parent="." index="3"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "5"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
