@@ -58,7 +58,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="Spike" parent="VBoxContainer/Elements" instance=ExtResource("6_3xfv2")]
-position = Vector2(334, 184)
+position = Vector2(324, 333)
 scale = Vector2(0.6, 0.6)
 metadata/_edit_group_ = true
 
