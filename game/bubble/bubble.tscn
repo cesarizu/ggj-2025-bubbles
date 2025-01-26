@@ -87,7 +87,6 @@ trail_lifetime = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-visible = false
 shape = SubResource("CircleShape2D_8x8ob")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

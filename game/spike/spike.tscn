@@ -17,14 +17,16 @@ texture = ExtResource("6_ih3rp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(8.75, -263.25)
+collision_layer = 5
+collision_mask = 35
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(1.25, 3.75)
 polygon = PackedVector2Array(-262.5, 205, -132.5, 152.5, 3.5, -95.75, 71.25, 168.75, 263.75, 203.75)
-disabled = true
 
 [node name="PointArea2D" type="Area2D" parent="."]
 position = Vector2(8.75, -263.25)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea2D"]
 position = Vector2(8.75, -78.75)
