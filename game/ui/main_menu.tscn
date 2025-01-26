@@ -54,27 +54,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -236.0
-offset_right = 115.0
-offset_bottom = 379.0
+offset_left = -410.5
+offset_top = -281.5
+offset_right = 410.5
+offset_bottom = 281.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 128
+
+[node name="Title" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]THE BUBBLE GAME[/b][/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="NewGame" type="Button" parent="VBoxContainer"]
+[node name="NewGame" type="Button" parent="VBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "New Game"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Credits"
 
-[node name="ExitGame" type="Button" parent="VBoxContainer"]
+[node name="ExitGame" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Exit Game"
@@ -85,22 +97,6 @@ libraries = {
 }
 autoplay = "fade_in"
 
-[node name="Title" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -420.5
-offset_top = 144.0
-offset_right = 420.5
-offset_bottom = 355.0
-grow_horizontal = 2
-bbcode_enabled = true
-text = "[b]THE BUBBLE GAME[/b]"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
