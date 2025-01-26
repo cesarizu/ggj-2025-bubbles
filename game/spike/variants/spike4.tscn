@@ -18,8 +18,6 @@ polygon = PackedVector2Array(-206, 165, -108, 89, -52, 129, 125, 99, 213, 166, 2
 
 [node name="PointArea2D" parent="." index="2"]
 collision_layer = 1
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" parent="PointArea2D" index="0"]
 position = Vector2(-112, -133)
