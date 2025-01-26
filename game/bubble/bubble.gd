@@ -9,6 +9,7 @@ extends RigidBody2D
 @export var puncture_factor := -0.2
 @export var size_factor := 5.0
 @export var min_size := 2
+@export var max_size := 15
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var circle_shape_2d: CircleShape2D = %CollisionShape2D.shape
@@ -23,6 +24,8 @@ var _puncturing := false
 var bubble_scale := 1.0:
 	set(value):
 		if value != bubble_scale:
+			if value * size_factor > max_size:
+				value = max_size / size_factor
 			bubble_scale = value
 			_update_size()
 
