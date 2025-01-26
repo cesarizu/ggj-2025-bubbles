@@ -39,3 +39,5 @@ func pop() -> void:
 func _update_size() -> void:
 	super._update_size()
 	enemy_counter.text = "%s" % enemy_size
+	if enemy_size < 1.0:
+		pop()

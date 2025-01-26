@@ -25,6 +25,8 @@ var bubble_scale := 1.0:
 
 var _wooble_id := 0
 
+var _is_popped := false
+
 
 func _ready() -> void:
 	_original_sprite_scale = sprite_2d.scale
@@ -56,6 +58,9 @@ func puncture(direction: Vector2) -> void:
 
 
 func pop() -> void:
+	if _is_popped:
+		return
+	_is_popped = true
 	gpu_particles_2d.emitting = true
 	sprite_2d.hide()
 

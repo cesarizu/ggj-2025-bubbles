@@ -49,5 +49,3 @@ position = Vector2(998, 417)
 
 [node name="EnemyBubble" parent="." instance=ExtResource("6_s7mgd")]
 position = Vector2(637, 400)
-min_size = 3
-size_factor = 5.0
