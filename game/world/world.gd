@@ -99,10 +99,15 @@ func _on_timer_timeout() -> void:
 
 
 func blow_bubble(delta: float) -> void:
-	if bubble and bubble.position.x < 256.0:
-		var amount := 1.0 - (bubble.position.x / 256.0)
-		var force := amount * Vector2(1.0, -sign(bubble.position.y - 520))
-		bubble.apply_central_force(100 * force * delta)
+	if bubble:
+		if bubble.position.x < 256.0:
+			var amount := 1.0 - (bubble.position.x / 256.0)
+			var force := amount * Vector2(1.0, -sign(bubble.position.y - 520))
+			bubble.apply_central_force(100 * force * delta)
+		elif bubble.position.x > 1700.0:
+				var amount := (bubble.position.x - 1700.0) / 256.0
+				var force := amount * Vector2(-1.0, -sign(bubble.position.y - 520))
+				bubble.apply_central_force(100 * force * delta)
 
 
 func _on_blow_area_2d_body_entered(body: Node2D) -> void:
