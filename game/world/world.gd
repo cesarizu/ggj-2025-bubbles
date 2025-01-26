@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 func move_pipes(delta: float):
 	for pipe in cur_pipes:
 		pipe.position.x -= speed * delta
-		if pipe.position.x < 0:
+		if pipe.position.x < -200:
 			cur_pipes.erase(pipe)
 			pipe.queue_free()
 

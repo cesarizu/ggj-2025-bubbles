@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0oagmscyjau"]
+[gd_scene load_steps=6 format=3 uid="uid://cq0oagmscyjau"]
 
 [ext_resource type="Texture2D" uid="uid://icj2weqymvij" path="res://game/tubo/tubo.png" id="1_krffv"]
 [ext_resource type="Script" path="res://game/tubo/tubo.gd" id="2_56dob"]
 [ext_resource type="Texture2D" uid="uid://bckhd8pmwtotb" path="res://game/bubble/bubble.svg" id="2_fia6x"]
+[ext_resource type="Texture2D" uid="uid://by4a08u3yq7pa" path="res://game/tubo/tubo_back.png" id="3_fe30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ujid"]
 size = Vector2(200, 1311.06)
@@ -15,7 +16,7 @@ script = ExtResource("2_56dob")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true
 show_behind_parent = true
-position = Vector2(0, -107.63)
+position = Vector2(0, -80)
 emitting = false
 amount = 54
 lifetime = 1.5
@@ -28,6 +29,11 @@ initial_velocity_min = 120.0
 initial_velocity_max = 500.0
 scale_amount_min = 0.01
 scale_amount_max = 0.05
+
+[node name="Sprite2DBack" type="Sprite2D" parent="."]
+position = Vector2(0, -58.2857)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_fe30f")
 
 [node name="PushArea2D" type="Area2D" parent="."]
 
