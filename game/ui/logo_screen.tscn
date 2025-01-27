@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmcmjmf15a6jg"]
+
+[ext_resource type="Texture2D" uid="uid://cv4p8ap6xq8b4" path="res://game/world/background.jpg" id="2_6n2ny"]
+[ext_resource type="Texture2D" uid="uid://odpsxlphgpxy" path="res://game/logo.png" id="3_hmjl4"]
+
+[node name="LogoScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(961, 581)
+scale = Vector2(1.95996, 1.19531)
+texture = ExtResource("2_6n2ny")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(955, 611)
+texture = ExtResource("3_hmjl4")

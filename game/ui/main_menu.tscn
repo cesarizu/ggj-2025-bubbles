@@ -54,6 +54,11 @@ position = Vector2(961, 581)
 scale = Vector2(1.95996, 1.19531)
 texture = ExtResource("2_ihmjj")
 
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(951, 349)
+scale = Vector2(0.55957, 0.55957)
+texture = ExtResource("2_d18wc")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -104,11 +109,6 @@ libraries = {
 "": SubResource("AnimationLibrary_bihvm")
 }
 autoplay = "fade_in"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(951, 349)
-scale = Vector2(0.55957, 0.55957)
-texture = ExtResource("2_d18wc")
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
